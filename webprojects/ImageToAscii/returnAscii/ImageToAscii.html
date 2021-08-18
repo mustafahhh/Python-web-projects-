@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ImageToAscii</title>
+    <link rel="stylesheet" href="ImageToAscii.css">
+</head>
+
+<body style="background-color:#393939;">
+<form>
+<input id='width' type="text" placeholder="width of output"> </input>
+<input id='image' class='font1' style="position:fixed; bottom:50%; color:black; margin:30px; padding:10px; border-style:solid; " type="text" placeholder="ImageUrl" >
+</form>
+
+
+
+
+
+<button id='sumbit' class="font1" onclick="postdatas(event)" style="cursor:pointer;position:absolute; right:50%; background-color: dodgerblue; border-style:solid; border-radius:5%; border-color:dodgerblue; color:white;font-size:30px;">SUMBIT</button>
+
+
+
+
+
+
+
+
+
+<script>
+function copy(value) {
+  navigator.clipboard.writeText(value);
+  console.log(value)
+}
+    function PostData(url, method="get", data="") {
+
+    url=url.toString();
+    method=method.toString();
+    data=data.toString();
+
+//CHECK CSRF-Token
+
+    function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+//Check if there is a hidden csrf-input-field, if so, get the value
+
+try {
+    var csrffield = document.getElementsByTagName("input");
+
+    var l = csrffield.length;
+    var i=0;
+
+while (true) {
+    if (i > l) {
+        break;
+    }
+
+    if (csrffield[i].name.toLowerCase().includes("csrf") == true) {
+        csrftoken=csrffield[i].value;
+        break;
+    }
+    i++;
+}}
+catch (err) {
+
+    var csrftoken = getCookie('csrftoken');
+
+}
+
+    var req = new XMLHttpRequest();
+
+    if (method == "get" || method == "GET" || method == "Get") {
+
+        req.open("GET", url, false);
+        req.send();
+    if (req.status == 200) {
+        return req.responseText;
+}}
+
+if (method == "post" || method == "POST" || method == "Post") {
+
+    req.open("POST", url, false);
+
+    if (data != "") {
+        req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    }
+
+    if (csrftoken != null) {
+        //Set it twice with a different header-name so that different apps can deal with it
+        console.log(csrftoken)
+          req.setRequestHeader(" Access-Control-Allow-Headers", X-CSRF-Token);
+                console.log(X-CSRF-TOKEN)
+
+
+    }
+
+    req.send(data);
+
+
+if (req.status == 200) {
+    return req.responseText;
+}}}
+    var postdatas = function(event) {
+        image= document.getElementById('image').value
+        width= document.getElementById('width').value
+        data = JSON.stringify({ "Link": "https://media.geeksforgeeks.org/wp-content/uploads/20210318103632/gfg-300x300.png","Width":width})
+        tox = PostData('http://127.0.0.1:8000/returnAscii/','POST',data)
+        if(tox != null){
+        copy(tox)
+        document.getElementById('sumbit').innerHTML="Copied to clipboard";
+        }else {
+        document.getElementById('sumbit').innerHTML="Error(connection lost or the url is wrong)";
+        }
+        }
+
+</script>
+</body>
+</html>

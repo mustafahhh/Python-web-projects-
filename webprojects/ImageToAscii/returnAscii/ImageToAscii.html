@@ -116,7 +116,7 @@ if (req.status == 200) {
     var postdatas = function(event) {
         image= document.getElementById('image').value
         width= document.getElementById('width').value
-        data = JSON.stringify({ "Link": "https://media.geeksforgeeks.org/wp-content/uploads/20210318103632/gfg-300x300.png","Width":width})
+        data = JSON.stringify({ "Link":image,"Width":width})
         tox = PostData('http://127.0.0.1:8000/returnAscii/','POST',data)
         if(tox != null){
         copy(tox)

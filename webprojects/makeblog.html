@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>Make blog</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+.a{
+font-family:"Almarai";
+  text-align: center;
+    position: relative;
+    right: -34%;
+font-size:50px;
+border-style:None;
+border-bottom:2px solid dodgerblue;
+}
+.a:focus {outline:none!important;}
+
+.content {
+font-family:"Almarai";
+  word-wrap: break-word;
+  font-size:32px;
+}
+.date {
+font-family:'Almarai';
+text-align:center;
+color:#393939;
+border-bottom:2px solid gray;
+
+}
+</style>
+</head>
+<body>
+
+<input type="text" id='title' class="a" />
+<h4 id="date" class="date">2016/10/20</h4>
+<div>
+<textarea style="width:1725px;height:600px;"  id="content" class="content"></textarea>
+  <button onclick="posting()">Make blog</button>
+</div>
+<h1 id='errorsign' style="text-align:center;font-family:'Almarai';color:white; border-left:20px solid Salmon;background-color:red;width:120px; opacity:0;">ERROR</h1>>
+  <script type="text/javascript" src="request.js"></script>
+  <script type="text/javascript" src="makeblog.js"></script>
+
+
+</body>
+</html>

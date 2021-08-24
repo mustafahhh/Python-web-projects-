@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+    .ele{
+    font-family:"Almarai";
+        background-color:dodgerblue;
+        border:6px black solid;
+        color:white;
+        width:300px;
+        position:absolute;
+
+    }
+    .eles {
+      color:white;
+      text-decoration: none;
+
+      }
+    .makeblog{
+    font-size:22px;
+    font-family:'Almarai';
+    text-align: right;
+    position:absolute;
+    right:50%;
+    text-decoration:None;
+    color:white;
+    background-color:dodgerblue;
+     padding:20px;
+     border:2px solid black;
+    }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+  <header>
+      <h1 style="color:black; font-family:'Almarai'; margin:1px;">Main</h1>
+      <a class="makeblog" href="makeblog.html">Click here to make blog</a>
+  </header>
+  <header>
+      <h5 id='blognumber' style="font-family:'Almarai'; margin:1px;">currently 0 blog</h5>
+  </header>
+ <ul id='list' class="ele">
+ </ul>
+
+
+
+  <script type="text/javascript" src="request.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+
+  </body>
+</html>

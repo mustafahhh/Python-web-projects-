@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>
+            MainPage
+        </title> 
+        <style>     
+        
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+
+            h1 { 
+                position: absolute;
+                right:50%;
+                bottom:50%;
+                font-size: 50%;
+                font-family:'Almarai';
+               }
+            body {
+                background-color: #1abc9c;
+            } 
+        
+        </style>
+        
+    </head>
+
+
+
+
+    <body> 
+
+        <h1 id='counter'>1</h1>
+
+
+        <script>
+         const socket = new WebSocket('ws://127.0.0.1:8000/websocket/');
+         //connecting to websocket
+         
+
+         //listining on any new messages
+         socket.addEventListener('message', function(message){
+            document.getElementById('counter').innerHTML = message.data;//writing message data to counter
+         })
+          </script>
+
+
+
+    </body>
+</html>

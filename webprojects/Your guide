@@ -1,5 +1,7 @@
 1-Msb7a.html:is javascript and css program that contains online msb7a for muslims
-^^^^^^^old project
+^^^^^^^old projects
+
+----------------------------------------------------------DJANGO-BACKEND
 2-ImageToAscii:is  django and js and html and some css project that turn any image to text i didn't did well in the css and the style of the web but i putted my time in serverside and js 
 
 
@@ -8,3 +10,11 @@
 ------A/first of all run the django server and enter the main.html and its all setted up 
 
 4-websocket(websocket-UsersUsingWebsite):django,django channels based project with some js and css and html | counts how much users using website 
+
+5-Chatting website:this website is chatting website where u can chat ur friends using rooms system so u can create room and make ur friends join ur room
+tools:this website used django for servers system,I used databases,websockets and apis to make this website also I used JS,CSS,HTML for client side
+security systems:Tokens(session id),anti-spam for client-side,
+notes:you can make only one user so there's no users duplication 
+
+----------------------------------------------------------
+future:thinking about upgrading my UI/UX skills and upgrade my websites theme

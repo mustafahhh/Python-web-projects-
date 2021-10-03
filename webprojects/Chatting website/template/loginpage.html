@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="http://127.0.0.1:8000/files/Logo.ico" />
+
+
+    <meta name="keywords" content="chat,chatting,roomchat,groupchat,group">
+    <meta name="description" content="Free chatting website! 
+    you can chat now with ur friends with our rooms chat service">
+    <meta property="og:image" content="https://developer.mozilla.org/static/img/opengraph-logo.png">
+    <meta property="og:description" content="Free chatting website! 
+    you can chat now with ur friends with our rooms chat service">
+    <meta property="og:title" content="Chatting">
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+     div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+    h1 { 
+        font-family: "Almarai";
+
+
+    }
+    .inputimage {
+
+ 
+        margin: 5px;
+    font-size: larger;
+    padding-left: 10%;
+    }
+    .inputuser{
+        border: 0px;
+    padding: 3px;
+    border-bottom: 5px solid RGB(0,0,0,33%);
+    font-size: 20px;
+    font-family: "Almarai";
+ 
+    }
+    .inputuser:focus {
+        font-size: 22px;
+        outline: none;
+    }
+    .sumbitbutton {  
+      margin:10px;
+      color:black;
+      background-color: transparent;
+      border-color: black;
+      border-style: solid;
+      border-width: 2px;
+      width: 17vh;
+      min-width: 179px;
+      font-size: 32px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .sumbitbutton:hover { 
+      background-color:black;
+      color:white;
+    }
+
+</style>
+    <title>Login page</title>
+  </head>
+  <body>
+
+    <div>
+            <h1 id="Error"></h1>
+            <input type='text' id="user" autofocus placeholder="Username" class="inputuser">
+            <h1>Your PFP</h1>
+            <input type="file" id="pfp" alt="" class="inputimage"  accept=".jpg,.png">
+            <button id = 'sumbit' class='sumbitbutton'>Sumbit</button>
+        </div>
+
+
+        <script type="text/javascript" src="http://127.0.0.1:8000/files/request.js"></script>
+        <script type="text/javascript" src="http://127.0.0.1:8000/files/login.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="http://127.0.0.1:8000/files/Logo.ico" />
+
+
+
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+     h1 { 
+         font-family: "Almarai";
+     }
+     .ddiv {
+    font-family:"Almarai";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+    div {
+        font-family:"Almarai";
+    }
+    input { 
+        font-family:"Almarai";
+    }button { 
+        font-family:"Almarai";
+
+    }
+    .sumbitbutton { 
+        background-color: #3498db;
+    border: red none;
+    /* margin: 100px; */
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+        cursor: pointer;
+
+    }
+</style>
+    <title>Join room</title>
+  </head>
+  <body style='background-color: #393939;'>
+        <div class='ddiv'> 
+            <div style='background-color:#e74c3c;margin:10px; opacity:0; border-left:50px solid #c0392b;display:flex; flex-direction: row;'>            
+                <a style="pointer-events: none" href='http://127.0.0.1:8000/front/makeroom/' id='errorhandler'>
+                <h1>Room not available you can click this to visit make room page</h1>
+                </a>
+            </div>
+            <img id='PFP' style='border:3px solid gray;border-radius: 100%; margin:0px ;' >
+            <div style='display:flex; flex-direction: row; '>
+                <input id='roomid' type='text'style='margin:2px;' placeholder='ROOM ID ' maxlength='6'>
+                <button class='sumbitbutton' id = 'sumbit'>Sumbit</button>
+            </div>
+
+
+
+        </div>
+
+
+        <script type="text/javascript" src="http://127.0.0.1:8000/files/request.js"></script>
+        <script type="text/javascript" src="http://127.0.0.1:8000/files/join.js"></script>
+        <script type="text/javascript" src="http://127.0.0.1:8000/files/LocalStorageCheck.js"></script>
+
+  </body>
+</html>

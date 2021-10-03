@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="http://127.0.0.1:8000/files/Logo.ico" />
+
+
+
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+ 
+      .messagecontent {
+   
+        padding-left: 32px; 
+    max-width: 332px;
+    padding-top: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 2px;
+    font-family: 'Almarai';
+    border: black 2px solid;
+    background-color: #50a8e5;
+    vertical-align: baseline;
+      }
+      .messagepfp {
+        float: left;
+    position: relative;
+    max-height: 45px;
+    /* top: 50%; */
+    margin-top: auto;
+    align-items: stretch;
+    margin-bottom: auto;
+    margin-right: 10px;
+    margin-left: 2px;
+
+}
+
+      
+      .messagediv {
+        display:flex;
+        flex-direction: column;
+      }
+      .messagemiddle{
+        display:flex;
+        flex-direction: row;
+        margin-top:auto;
+      }
+      .messagename { 
+        text-align: start;
+    margin-top: auto;
+    height: 0px;
+    margin-left: 4px;
+    font-family: 'Almarai';
+
+      }
+      .ddiv { 
+        display:flex;
+        flex-direction: column;
+      }
+      .input { 
+        left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: black 3px solid;
+    color: white;
+    text-align: center;
+    /* margin-top: 100px; */
+    display: flex;
+    flex-direction: row;
+    clear: both;
+    position: sticky;
+ 
+ }
+ .textbox { 
+    resize: none;
+    border:0;
+    font-family: "Almarai";
+    width: 100%;
+    border-right: gray 2px solid;
+    height:60px;
+ }
+ .textbox:focus { 
+     outline: none!important;
+ }
+ .sendmessage {
+    color:#0095f6;
+    background-color: transparent;
+    border:0;
+    cursor:pointer;
+ }
+ .newroom {
+  overflow-anchor: none;
+     -webkit-box-orient: vertical; 
+     -webkit-box-direction: normal; 
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    min-height: 100%;
+    display: flex;
+ }
+</style>
+    <title>Login page</title>
+  </head>
+  <body style='margin:0px;'>
+    <div class='newroom'>
+
+        <h1>--Joined to room--</h1>
+
+    </div>
+    <div  class='ddiv'>
+          <div id='messagesbox' class='messagediv'>
+            <div class = 'messagediv'>
+                <h2 class='messagename'>Tahabashar11isgoodboy</h2>
+                <div class='messagemiddle'>
+                    <img class='messagepfp' style='float: left;' height=45 width=45 src='http://127.0.0.1:8000/files/files/02b528d1-b074-4297-a713-bb8d4d138ce2.png'>
+                    <h3 id='xx' class = 'messagecontent'>hello my name is taha how old are you?</h3>
+                </div>
+              </div>
+                <div class='messagediv'>
+                  <h2 class='messagename'>Mohaisbadboy</h2>
+                  <div class='messagemiddle'>
+                      <img class='messagepfp' style='float: left;' height=45 width=45 src='http://127.0.0.1:8000/files/files/02b528d1-b074-4297-a713-bb8d4d138ce2.png'>
+                      <h3 class = 'messagecontent'>oh hi taha نورتنا,i am good</h3>
+                  </div>
+          </div>
+    </div>
+        <div class='input'>
+            
+            
+              <textarea class='textbox' id='message' placeholder="message"></textarea>
+              <button id='sendmessage' class='sendmessage'>send</button>
+        </div>
+      </div>
+        <script type="text/javascript" src="http://127.0.0.1:8000/files/request.js"></script>
+        <script type="text/javascript"> 
+          var messagess = 0; 
+          //can only send 5 messages in 2 seconds 
+
+
+
+         setInterval(function(messages=messagess){
+          console.log(messages)   
+          
+          messagess=0
+        
+        }
+          
+          ,5000);//every 4 seconds make messages = 0 
+ 
+          function antispam(messages = messagess) { 
+
+            messagess+=1
+
+              if (messagess >= 5) { 
+                  return 1
+              }else {
+                  return 0 
+              }
+          }
+
+
+
+
+
+
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded',function(){
+
+
+          const roomid = "{{roomid}}";
+          const Token = localStorage.getItem('Token')
+  
+      console.log(roomid)
+          window.BeforeUnloadEvent = function(){ 
+                    websocket.close()
+
+
+          }
+     var websocket = new WebSocket(`ws://127.0.0.1:8000/websocket/${roomid}/${Token}/`)      
+      const button = document.getElementById('sendmessage')  
+      button.addEventListener('click', function(){
+              console.log(document.getElementById("message").value)
+
+        websocket.send(`{
+
+                          
+                                       "message" : "${document.getElementById("message").value}" ,
+                                       "token" : "${Token}",
+                                       "room" : "${roomid}"
+
+                             }`)
+                            })
+                          
+        websocket.onmessage = function(message){ 
+          /*
+                <div class='messagediv'>
+                  <h2 class='messagename'>Mohaisbadboy</h2>
+                  <div class='messagemiddle'>
+                      <img class='messagepfp' style='float: left;' height=45 width=45 src='http://127.0.0.1:8000/files/files/02b528d1-b074-4297-a713-bb8d4d138ce2.png'>
+                      <h3 class = 'messagecontent'>oh hi taha نورتنا,i am good</h3>
+                </div>
+          */
+                console.log(message ) 
+          data =  JSON.parse(message["data"])
+         
+          if (data["event"] == 'message'){
+              //variables
+              x = antispam()
+              console.log(antispam,x)
+            if(x == 0){
+              var username = data["User"]
+              var messagecontent = data['Message']
+              var pfplink =  `http://127.0.0.1:8000/files/${data["pfp"]}`
+              var box = document.getElementById('messagesbox')
+              console.log(username,messagecontent,pfp,box)
+              //here is the holder of the message content
+              var newmessage  = document.createElement('div')
+              newmessage.setAttribute("class","messagediv")
+
+
+              //this is the name of the message author
+              var name = document.createElement('h2')
+              name.setAttribute("class","messagename")
+              var messagemiddle = document.createElement('div')
+              messagemiddle.setAttribute('class', 'messagename')
+              
+              //messagemiddle is the messagemiddle element 
+              var messagemiddle = document.createElement('div')
+              messagemiddle.setAttribute("class","messagemiddle")
+
+
+              //this is the image
+              var pfp = document.createElement('img')
+              pfp.setAttribute('class','messagepfp')
+              pfp.src = pfplink
+              pfp.setAttribute('height', 45)
+              pfp.setAttribute('width', 45)
+              
+              //this is the message in the web 
+              var messageinweb = document.createElement('h3')
+              messageinweb.setAttribute('class','messagecontent')
+
+
+
+              //appending childs
+              box.appendChild(newmessage)
+              //now we append to newmessage div the elements for our message
+              newmessage.appendChild(name)
+              newmessage.appendChild(messagemiddle)
+              //now we append PFP and message content to the message middle div 
+              messagemiddle.appendChild(pfp)
+              messagemiddle.appendChild(messageinweb)
+              name.innerHTML = username
+              messageinweb.innerHTML = messagecontent
+              window.scrollTo(0,document.body.scrollHeight);
+              document.getElementById('message').value = ''
+              document.getElementById('message').focus()
+            } else { 
+                console.log('Spam detected')
+
+            }
+        } 
+      }})
+      
+
+
+
+      
+      
+      </script>
+      
+        <script type="text/javascript" src="http://127.0.0.1:8000/files/LocalStorageCheck.js"></script>
+
+  </body>
+</html>

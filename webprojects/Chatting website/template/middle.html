@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="http://127.0.0.1:8000/files/Logo.ico" />
+
+
+
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+     .ddiv {
+    font-family:"Almarai";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+  a { 
+    text-decoration: none;
+    color:white;
+    text-decoration-color: white;
+    font-family:"Almarai";
+    margin:10px;
+    background-color: #00aeff; 
+    padding:12px;
+  }
+
+</style >
+    <title>Login page</title>
+  </head>
+  <body style='background-color: #393939;'>
+
+    <div class='ddiv'>
+          <a href='http://127.0.0.1:8000/front/makeroom/'>MAKE ROOM</a>
+          <button id='clearlocalstorage'><img style='background-color:transparent;'src='http://127.0.0.1:8000/files/logout.png' width=48 height=48></button>
+          <a href='http://127.0.0.1:8000/front/joinroom/'>JOIN ROOM</a>
+    </div>
+
+
+        <script type="text/javascript" src="http://127.0.0.1:8000/files/request.js"></script>
+        <script type="text/javascript" src="http://127.0.0.1:8000/files/middle.js"></script>
+
+        <script type="text/javascript" src="http://127.0.0.1:8000/files/LocalStorageCheck.js"></script>
+
+  </body>
+</html>

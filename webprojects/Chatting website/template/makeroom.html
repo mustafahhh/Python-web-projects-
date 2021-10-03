@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="http://127.0.0.1:8000/files/Logo.ico" />
+
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+     .none { 
+         background-color: rgb(0, 255, 255);
+     }
+     a{   
+ width: 20vh;
+      text-decoration: none;
+      cursor: pointer;
+    margin: 10px;
+    background-color: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Almarai";
+    border: 3px solid #046cd8;
+}
+     div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+</style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div> 
+      <img id='PFP' style='border:3px solid gray;border-radius: 100%; margin:0px ;' >
+      <a id="makeroom" style='width:20vh;border:3px solid #046cd8;'  onclick="makeroom(event);">MAKE ROOM</a>
+
+    </div>
+
+  <script type="text/javascript" src="http://127.0.0.1:8000/files/request.js"></script>
+  <script type="text/javascript" src="http://127.0.0.1:8000/files/makeroom.js"></script>
+  <script type="text/javascript" src="http://127.0.0.1:8000/files/LocalStorageCheck.js"></script>
+
+  </body>
+</html>

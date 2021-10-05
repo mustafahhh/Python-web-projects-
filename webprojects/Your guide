@@ -14,7 +14,7 @@
 5-Chatting website:this website is chatting website where u can chat ur friends using rooms system so u can create room and make ur friends join ur room
 tools:this website used django for servers system,I used databases,websockets and apis to make this website also I used JS,CSS,HTML for client side
 security systems:Tokens(session id),anti-spam for client-side,
-notes:you can make only one user so there's no users duplication 
+notes:you can make only one user so there's no users duplication + you should change the mask path in web/helper.py
 
 ----------------------------------------------------------
 future:thinking about upgrading my UI/UX skills and upgrade my websites theme

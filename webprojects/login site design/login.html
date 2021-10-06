@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login</title>
+    
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+        h1 {
+            font-family:'Almarai';
+            margin:6px;
+
+        }
+        header {
+            background-color: #4262FF;
+            max-width: 258px;
+            margin:auto;
+            box-shadow:  3px 3px 3px #222222;
+
+        }
+        body { 
+           background-image: linear-gradient(to right,#234a91,#912077);
+            margin-top: 100px;
+            margin-bottom:100px;
+            margin-left: 120px;
+            margin-right:120px;
+            
+        }
+
+        .inputholder { 
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+        
+            }
+        .inputholder input { 
+
+            border:0px;
+            border-bottom:2px #808080 solid;
+            max-width: 60vh;
+        }
+        .inputholder input:focus {
+            outline: none!important;
+        }
+        .userflex  {
+                display:flex;
+                flex-direction: row;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+                margin-bottom:10px;
+                padding:1px 2px;
+
+        }
+        .passwordflex { 
+            display:flex;
+                flex-direction: row;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+                margin-bottom:10px;
+                padding:1px 2px;
+                    
+        }
+        .userimage { background-color:white; border-bottom:2px #808080 solid}
+        .sumbit { 
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+                margin-bottom:10px;
+                padding:1px 5px;
+                border: #4d12ac 2px solid;
+                color:#6222c8;
+                border-radius: 5px;
+                cursor:pointer;
+                box-shadow:  3px  2px 5px black;
+                transition: 0.25s;
+                background-color: white;
+
+            }
+    
+        .sumbit:hover { 
+                color:white;
+                background-color:#4d12ac;
+            }
+  
+
+    </style>
+
+
+</head>
+
+
+<body>
+    
+    <header> 
+                <h1 style = 'text-align:center;'>login demo</h1>
+                <div style='max-width:258px;background-color:  #222222; margin:0px;'>
+                    <div class='inputholder'>
+                        <div class='userflex'><img class='userimage' height=18 width=18 src='user.png'><input autofocus type='text' placeholder="User">    </div>
+                        <div class='passwordflex'><img class='userimage' heigt=18 width=18 src=password.png><input  type='password' placeholder="Password"></div>
+                        <button class='sumbit'>Login</button>
+                    </div>
+                </div>
+        
+    </header>
+       
+
+    <script src="login.html"></script>
+
+
+</body>
+
+
+
+</html>

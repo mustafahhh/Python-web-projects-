@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+<title>Main|Math</title>
+
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+    body {
+            background-image: linear-gradient(to right   ,#1d2833 5%,#34495e );
+            margin:0px;
+    }
+    header div { 
+        background-color:#1abc9c;
+        padding-top:100%;        
+        padding: 10px;
+        text-align: center;
+        color:white;
+    }
+    .questionshandler { 
+        font-family:"Almarai";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;        
+    }
+    h1 { 
+        font-family:'almarai'
+    }
+   
+
+    input[type=number] { 
+        font-size:16px;
+        background-color:transparent;
+        border: none;
+        padding: 13px 20px;
+        text-align:center;
+        border:#3498db 2px solid;
+        border-radius: 50px;
+        transition:  0.35s, border-color 0.25s;
+        transition-timing-function: ease;
+        margin-bottom:30px;
+        color:white;
+    }
+    input[type=number]:focus { 
+        border-color:#2ecc71 !important;
+        outline: none!important;
+        padding: 14px 30px;
+    }
+    input[type=number]:hover { 
+        border-color:#106095;
+    }
+    
+    input[type=number]::-moz-list-number { 
+        appearance: none;
+    }
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+    button { 
+        background-color:transparent;
+        border-style:none;
+        color:white;
+        font-size:20px;
+        cursor:pointer;
+        border:#c0392b solid 2px;
+        padding:15px;
+        border-radius: 50px;
+        transition: 0.25s, border-color 0.35s;
+    }
+    button:hover { 
+        border-color:#f39c12;
+        padding: 17px 20px;
+    }
+    .EquationBox {
+        display:flex;
+        flex-direction: row;
+        transition:0.35s;   
+    }
+    .EquationBox:hover { 
+        font-size:60px;
+        color:#fa7500 !important;
+    }
+    .Equation { 
+        font-size: 50px;
+        width:100%;
+        height:100%;
+        color:white;
+        transition:0.25s,color 0.15s;   
+     }
+    .Equation:hover { 
+        font-size:60px;
+        color:#e67e22;
+    }
+
+</style>
+</head>
+
+<body>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.min.js' crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="http://127.0.0.1:8000/files/request.js/" crossorigin></script>
+    <!-- Main JS code -->
+    <script type = 'text/babel' src='http://127.0.0.1:8000/files/quizreact.js' ></script>
+
+
+
+
+</body>
+
+
+
+
+
+</html>

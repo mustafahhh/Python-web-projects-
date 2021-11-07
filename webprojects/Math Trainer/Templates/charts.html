@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+<title>Stats|Math</title>
+
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+
+body {
+
+  position:relative;
+    height:100vh;
+    z-index: 10;
+  overflow: hidden;
+  background: linear-gradient(to right,  #000614 50%, #1d2833 25%,#34495e);
+  background-size: 200% 100%;
+    transition:all .55s;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+ 
+    margin: 0;
+}
+html { 
+    height:100%;
+}
+
+
+ a { 
+  position:relative;
+  font-family: "Almarai";
+  padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left:10px;
+    font-size:21px;
+    color: #000614;
+    background-color: #000614;
+    border: #000614 solid 3px;
+  text-decoration: none;
+  border-radius:5px;
+  margin:10px;
+  box-shadow: 0px 0px 0px #192a56;
+
+  z-index: -500;
+  cursor:pointer;
+  transition:0.25s,box-shadow 0.35s,padding .55s;
+}
+a::after { 
+  position: absolute;
+  background-color:#00061454;
+  padding:3px;
+  border:2px solid #00061454;
+  border-radius: 10px;
+  bottom:60px;
+  font-size:15px;
+  right:13px;
+  content:var(--text);
+  opacity: 0;
+  transition:all 0.55s;
+}
+a:hover{
+  padding-right:3px;
+  padding-left:3px;
+  margin:10px;
+  background-color: #2b1c9b !important;
+  border: #2b1c9b solid 3px !important;
+  box-shadow:0 0 20px #4d2ee7  ,0 0 40px #4d2ee7 
+            ,0 0 60px #6349e7 
+            ,0 0 80px #6349e7 !important;
+}
+a:hover::after{ 
+    opacity:1;
+}
+
+.row { 
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+</style>
+</head>
+
+<body id='FakeBody' >
+      <a href='http://127.0.0.1:8000/stats/charts/AnswersChart/' style='--text:"The answers per round               ANSWERS on ROUNDS "'>Answers chart</a>
+      <a href='http://127.0.0.1:8000/stats/charts/ResultChart/' style='--text:"The real result of your training  |   (ANSWERS divided by TIME) x 5 on ROUNDS"'>Result chart</a>
+
+
+    <script src='http://127.0.0.1:8000/files/charts.js'></script>
+</body>
+</html>

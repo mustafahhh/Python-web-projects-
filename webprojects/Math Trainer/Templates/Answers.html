@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Preview Answers</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+div div h1  { 
+    font-family:"Almarai";
+    width: 100vh;
+text-align:center;
+
+
+}
+body {
+    background-image: linear-gradient(to right   ,#1d2833 5%,#34495e );
+}
+
+.ContentHolder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;
+}
+div h1{
+    color: #fbc531;
+    text-align:center;
+    font-size:40px;
+}
+div h1::selection {  
+    color:wheat;
+    text-align:center;
+
+}
+div h1 span { 
+font-size:50px;
+color:#ffffff;
+font-weight: lighter;
+display: inline-block;
+transition:0.25s ;
+cursor:pointer;
+text-align:center;
+}
+div h1 span:hover {
+        color:#e74c3c;
+        font-size:55px;
+} 
+div h1 span::selection {  
+    color:#4cd137;
+}
+div h1 span:active {
+    color:#e74d3c65;
+
+    animation: animate 1s linear infinite;
+    }
+@keyframes animate {
+   0% { 
+        transform: rotate(0deg);
+    } 
+    100% {
+        transform:rotate(360deg);
+    }
+
+
+}
+
+.menu { 
+    margin-top:50px;
+    margin-left:auto;
+    height: 180px;
+    width: 180px;
+    margin-right:auto;
+    overflow:hidden;
+    background:rgba(0,0,0,0.5);
+    color:#c1cc2e;
+    text-align:center;
+    font-size:50px;
+    border-radius: 5px;
+    font-family:"Almarai";
+   max-height:100vh;
+   position:relative;
+    text-decoration:none ;
+    cursor:pointer;
+    box-shadow : 0 0 5px #212933
+    , 0 0 10px #212933 
+    , 0 0 20px #212933 
+    ,0 0 30px #212933;
+    transition: 0.25s;
+}
+.menu::before { 
+    content:'';
+    position: absolute;
+    width: 320px;
+    height: 50%;
+    background: linear-gradient(to right,#f1c40f,#e74c3c);
+    left: -41px;
+    bottom: 40px;
+    animation:animate 4s cubic-bezier(0.53, -0.16, 0, 1.17) infinite;
+}
+
+@keyframes animate { 
+    0% { 
+        transform :rotate(0deg)
+    } 
+    100% { 
+        transform : rotate(360deg)
+    }
+
+
+
+}
+.menu::after { 
+    content:'';
+    background-color:#2f3640;
+    position:absolute;
+    inset: 4px;
+}
+.menu:hover { 
+    height: 190px;
+    width: 190px;
+    margin-top:45px;
+    box-shadow : 0 0 15px #212933
+    , 0 0 25px #212933 
+    , 0 0 30px #212933 
+    ,0 0 40px #212933;
+    
+}
+.menu:hover h1 {
+    font-size:50px;
+}
+.menu h1 { 
+    color: #12e76c;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-decoration: none;
+    z-index: 10;
+    margin: auto;
+    transition:0.15s;
+}
+</style>
+
+
+
+</head>
+
+
+<body >
+
+
+    <div class='ContentHolder'>
+        <div>
+            <h1 > 
+                You have answered <span >{{Answered}}</span> from the <span >30</span> equations  
+            </h1>
+            <h1>
+                Your total Answers will be <span id='TotalAnswers'></span> 
+            </h1>
+            <h1>
+                You played <span id='TotalRounds'></span> rounds
+            </h1>
+            <h1>
+                Your A/R will be <span id='AR'></span>
+            </h1>
+        </div> 
+        <!--Menu buttons-->
+        <a class='menu' href='http://127.0.0.1:8000/'>
+            <h1 href='http://127.0.0.1:8000/'>MENU</h1>
+        </a>
+    </div>    
+    <script src='http://127.0.0.1:8000/files/Answers.js'></script>
+
+
+
+</body>
+</html>

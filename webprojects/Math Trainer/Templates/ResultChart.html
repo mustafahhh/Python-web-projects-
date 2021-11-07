@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+<title>Stats|Math</title>
+
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+body {
+    background: linear-gradient(to right,   #1d2833 25%,#34495e);
+}
+a{
+position: absolute;
+right:calc(50% - 50px);
+
+text-decoration: none;
+color:#00a8ff;
+font-family:'Almarai';
+font-size:20px;
+text-align:center;
+border:#00a8ff 2px solid;
+border-radius:5px;
+background-color:transparent;
+padding:10px;
+transition:0.25s;
+
+}
+a:hover { 
+color:aliceblue;
+border:#00a8ff 2px solid;
+border-radius:5px;
+background-color:#00a8ff;
+}
+
+div { 
+    width:100%;
+}
+</style>
+</head>
+
+<body >
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <canvas id="myChart" width="350" height="330"></canvas>
+    <div>   
+        <a href = 'http://127.0.0.1:8000/stats/charts/'>return</a>
+    </div>   
+ <script>
+     //LS = localstorage 
+     function ReadLS(Adress) { 
+        var a;
+        //is anything in localstorage?
+        if (localStorage.getItem(Adress) === null) {
+            a = [];
+        } else {
+            // Parse the serialized data back into an array of objects
+            a = JSON.parse(localStorage.getItem(Adress));
+        }
+        return a;
+     }
+
+
+
+
+    var Time = ReadLS('Time')
+    var Answers = ReadLS('Answers')
+    var roundsplayed = localStorage.getItem('TotalRounds')
+    var label = []
+    for (let i = -1; i < roundsplayed  ; i++) { 
+        label.push(i + 2)
+    }
+    var result = [ ]
+    Time.forEach((value,index) => {
+
+        result.push((Answers[index]/value)*5)
+
+
+    })
+    
+
+
+
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: label,
+            datasets: [{
+                label: 'T/A',
+                data: result,
+                backgroundColor: [
+
+                    'rgba(255, 206, 86, 0.2)',
+
+                ],
+                borderColor: [
+                    'rgba(255, 206, 86, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>
+
+</body>
+</html>

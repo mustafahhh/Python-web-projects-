@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+<title>Main|Math</title>
+
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+
+body {
+    background-image: linear-gradient(to right   ,#1d2833 5%,#34495e );
+}
+.startbox {
+    font-family:"Almarai";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+
+}
+.image {
+    background-color:transparent;
+   /*#26e07f*/
+    border:#229050 3px solid;
+    border-radius: 50%;
+    width:150px;
+    height:150px;
+    background:url(http://127.0.0.1:8000/files/start.png) no-repeat 50% 50%;
+    transition: 0.25s;
+    margin-bottom:30px;
+
+} 
+.image:hover {  
+        border-color: #27ae60;
+        background-color:#27ae60;
+        width:160px;
+        height:160px;
+        box-shadow:0 5px 10px #27ae60,
+                   0 0 25px #27ae60,
+                   0 0 50px #27ae60, 
+                   0 0 100px #27ae60;
+}
+.starttext { 
+    color:rgb(15, 200, 92);
+    font-family:'Almarai';
+    margin-bottom:30px;
+    font-size:45px;
+    transition:0.25s;
+    
+}
+.starttext:hover { 
+        font-size:50px;
+        color:#00ff6a;
+
+
+
+
+
+}
+.statsbutton { 
+    margin:10px;
+    font-size: 40px;
+    transition:0.35s;
+    color:#27ae60;
+    text-decoration:  none;
+
+
+}
+.statsbutton:hover{ 
+    font-size:50px;
+    color:#00ff6a;
+
+}
+</style>
+</head>
+
+<body>
+
+
+
+    <div class='startbox'>
+        <h1 class='starttext'>Practice Math</h1>
+        <a href='http://127.0.0.1:8000/quiz/'><div class = 'image'></div></a>
+        <a class = 'statsbutton' href='http://127.0.0.1:8000/stats/'>Stats</a>
+
+    </div>
+
+
+    <script  src='http://127.0.0.1:8000/files/main.js' ></script>
+
+
+
+
+</body>
+
+
+
+
+
+</html>
